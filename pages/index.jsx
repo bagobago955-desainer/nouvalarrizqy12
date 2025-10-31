@@ -237,28 +237,29 @@ export default function App() {
           )}
 
           {page === 'prestasi' && (
-            <section className="max-w-5xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                {prestasiList.map((p, i) => (
-              <Card
-                key={i}
-                className="hover:shadow-lg transition cursor-pointer"
-                onClick={() => setSelectedImageIndex(karyaList.length + i)}
-                >
-                <motion.img
-                  whileHover={{ scale: 1.03 }}
-                  src={p.img}
-                  alt={p.title}
-                  className="w-full h-40 object-cover rounded-t-lg"
-                  />
-                <CardContent className="p-4">
-                  <p className="font-semibold text-gray-700">{p.title}</p>
-                </CardContent>
-              </Card>
-            ))}
-              </div>
-            </section>
+      <section className="max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {prestasiList.map((p, i) => (
+        <Card
+          key={i}
+          className="hover:shadow-lg transition cursor-pointer"
+          onClick={() => setSelectedImageIndex(karyaList.length + i)}
+          >
+          <motion.img
+            whileHover={{ scale: 1.03 }}
+            src={p.img}
+            alt={p.title}
+            className="w-full h-40 object-cover rounded-t-lg"
+          />
+          <CardContent className="p-4">
+            <p className="font-semibold text-gray-700">{p.title}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+)}
 
           )}
         </motion.main>
