@@ -267,11 +267,13 @@ export default function App() {
             ))}
               </div>
             </section>
+  
           )}
         </motion.main>
-        
-        <AnimatePresence>
-          {selectedImageIndex !== null && (
+      </AnimatePresence>
+      
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
       <motion.div
         className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
         initial={{ opacity: 0 }}
@@ -289,34 +291,21 @@ export default function App() {
           exit={{ scale: 0.9, opacity: 0 }}
           />
         
-        <button
-          onClick={(e) => { e.stopPropagation(); prevImage(); }}
-          className="absolute left-4 text-white hover:text-gray-300"
-          >
+        <button onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute left-4 text-white hover:text-gray-300">
           <ChevronLeft className="w-10 h-10" />
         </button>
         
-        <button
-          onClick={(e) => { e.stopPropagation(); nextImage(); }}
-          className="absolute right-4 text-white hover:text-gray-300"
-          >
+        <button onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute right-4 text-white hover:text-gray-300">
           <ChevronRight className="w-10 h-10" />
         </button>
         
-        <button
-          onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }}
-          className="absolute top-4 right-4 text-white hover:text-gray-300"
-          >
+        <button onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }} className="absolute top-4 right-4 text-white hover:text-gray-300">
           <X className="w-8 h-8" />
         </button>
       </motion.div>
     )}
-        </AnimatePresence>
       </AnimatePresence>
-          
-          </motion.main>
-        </AnimatePresence>
-
+      
       <section className="py-16 text-center">
         <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
         <p className="text-gray-600 mb-6">Tertarik bekerja sama atau ingin berdiskusi?</p>
@@ -326,65 +315,3 @@ export default function App() {
           <a href="https://www.linkedin.com/in/muhammad-nouval-ar-rizqy-9ba777378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="linkedin"><Linkedin className="w-6 h-6" /></a>
         </div>
       </section>
-
-      <AnimatePresence>
-  {selectedImageIndex !== null && (
-    <motion.div
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 cursor-zoom-out"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={() => setSelectedImageIndex(null)}
-    >
-      <motion.img
-        src={galleryImages[selectedImageIndex]}
-        alt="Preview"
-        className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg cursor-zoom-in"
-        onClick={(e) => e.stopPropagation()}
-        whileTap={{ scale: 1.15 }}
-        transition={{ type: "spring", stiffness: 200, damping: 15 }}
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-      />
-
-      <button
-        onClick={(e) => { e.stopPropagation(); prevImage(); }}
-        className="absolute left-4 text-white hover:text-gray-300"
-      >
-        <ChevronLeft className="w-10 h-10" />
-      </button>
-
-      <button
-        onClick={(e) => { e.stopPropagation(); nextImage(); }}
-        className="absolute right-4 text-white hover:text-gray-300"
-      >
-        <ChevronRight className="w-10 h-10" />
-      </button>
-    </motion.div>
-  )}
-</AnimatePresence>
-            <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.img
-              src={selectedImage}
-              alt="Preview"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
