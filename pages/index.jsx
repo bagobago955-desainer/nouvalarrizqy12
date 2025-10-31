@@ -299,7 +299,6 @@ export default function App() {
       >
         <ChevronRight className="w-10 h-10" />
       </button>
-    </motion.div>  {/* ✅ TUTUP motion.div */}
+    </motion.div>
   )}
-</AnimatePresence>  {/* ✅ TUTUP AnimatePresence */}
-
+</AnimatePresence>
