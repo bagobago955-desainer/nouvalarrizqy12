@@ -236,32 +236,37 @@ export default function App() {
 
           )}
 
-          {page === 'prestasi' && (
-  <section className="max-w-5xl mx-auto text-center">
-    <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
-    <div className="grid md:grid-cols-3 gap-6">
-      {prestasiList.map((p, i) => (
-        <Card
-          key={i}
-          className="hover:shadow-lg transition cursor-pointer"
-          onClick={() => setSelectedImageIndex(karyaList.length + i)}
-        >
-          <motion.img
-            whileHover={{ scale: 1.03 }}
-            src={p.img}
-            alt={p.title}
-            className="w-full h-40 object-cover rounded-t-lg"
-          />
+          <AnimatePresence mode="wait">
+            <>
+              <motion.main key={page} variants={pageVariants} initial="initial" animate="animate" exit="exit" className="p-8 pt-28">
+                {page === 'prestasi' && (
+      <section className="max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {prestasiList.map((p, i) => (
+        <Card key={i} className="hover:shadow-lg transition cursor-pointer" onClick={() => setSelectedImage(p.img)}>
+          <img src={p.img} alt={p.title} className="w-full h-48 object-contain rounded-t-lg" />
           <CardContent className="p-4">
             <p className="font-semibold text-gray-700">{p.title}</p>
           </CardContent>
         </Card>
       ))}
-    </div>
-  </section>
-)}
-        </motion.main>
-      </AnimatePresence>
+        </div>
+      </section>
+    )}
+              </motion.main>
+              {selectedImage && (
+      <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]" onClick={() => setSelectedImage(null)}>
+        <div className="relative max-w-4xl w-full p-4">
+          <button className="absolute top-4 right-4 text-white" onClick={() => setSelectedImage(null)}>
+            <X className="w-6 h-6" />
+          </button>
+          <img src={selectedImage} alt="Full Sertifikat" className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-lg" />
+        </div>
+      </div>
+    )}
+            </motion.main>
+          </AnimatePresence>
 
       <section className="py-16 text-center">
         <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
