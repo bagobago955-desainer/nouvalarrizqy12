@@ -260,9 +260,6 @@ export default function App() {
     </div>
   </section>
 )}
-
-
-          )}
         </motion.main>
       </AnimatePresence>
 
