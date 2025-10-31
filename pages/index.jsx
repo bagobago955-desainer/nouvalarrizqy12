@@ -304,8 +304,7 @@ export default function App() {
         </button>
       </motion.div>
     )}
-      </AnimatePresence>
-    </motion.main>
+      </motion.main>
     </AnimatePresence>
     
     
