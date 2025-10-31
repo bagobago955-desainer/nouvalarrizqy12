@@ -305,13 +305,19 @@ export default function App() {
       </motion.div>
     )}
       </AnimatePresence>
-      
-      <section className="py-16 text-center">
-        <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
-        <p className="text-gray-600 mb-6">Tertarik bekerja sama atau ingin berdiskusi?</p>
-        <div className="flex justify-center gap-6">
-          <a href="mailto:bagobago955.com" aria-label="email"><Mail className="w-6 h-6" /></a>
-          <a href="https://github.com/bagobago955-desainer" target="_blank" rel="noopener noreferrer" aria-label="github"><Github className="w-6 h-6" /></a>
-          <a href="https://www.linkedin.com/in/muhammad-nouval-ar-rizqy-9ba777378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="linkedin"><Linkedin className="w-6 h-6" /></a>
-        </div>
-      </section>
+    </motion.main>
+    </AnimatePresence>
+    
+    
+    <section className="py-16 text-center">
+    <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
+    <p className="text-gray-600 mb-6">Tertarik bekerja sama atau ingin berdiskusi?</p>
+      <div className="flex justify-center gap-6">
+        <a href="mailto:bagobago955.com" aria-label="email"><Mail className="w-6 h-6" /></a>
+        <a href="https://github.com/bagobago955-desainer" target="_blank" rel="noopener noreferrer" aria-label="github"><Github className="w-6 h-6" /></a>
+        <a href="https://www.linkedin.com/in/muhammad-nouval-ar-rizqy-9ba777378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="linkedin"><Linkedin className="w-6 h-6" /></a>
+      </div>
+    </section>
+    </div>
+    );
+}
