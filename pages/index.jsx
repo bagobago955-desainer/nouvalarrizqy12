@@ -349,16 +349,27 @@ export default function App() {
     </motion.div>
   )}
 </AnimatePresence>
-      <AnimatePresence>
+            <AnimatePresence>
         {selectedImage && (
-          <motion.div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedImage(null)}>
-            <motion.img src={selectedImage} alt="Preview" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg" onClick={(e) => e.stopPropagation()} />
+          <motion.div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.img
+              src={selectedImage}
+              alt="Preview"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
           </motion.div>
         )}
       </AnimatePresence>
     </div>
-  );
-}
-      </div>
   );
 }
