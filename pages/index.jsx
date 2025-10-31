@@ -248,59 +248,67 @@ export default function App() {
       className="p-8 pt-28"
     >
       {page === 'prestasi' && (
-        <section className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-blue-700">
-            Prestasi Lengkap
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {prestasiList.map((p, i) => (
-              <Card
-                key={i}
-                className="hover:shadow-lg transition cursor-pointer"
-                onClick={() => setSelectedImage(p.img)}
-              >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  className="w-full h-48 object-contain rounded-t-lg"
-                />
-                <CardContent className="p-4">
-                  <p className="font-semibold text-gray-700">{p.title}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-      )}
-    </motion.main>
-
-    {selectedImage && (
-      <div
-        className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
-        onClick={() => setSelectedImage(null)}
-      >
-        <div className="relative max-w-4xl w-full p-4">
-          <button
-            className="absolute top-4 right-4 text-white"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedImage(null);
-            }}
+      <section className="max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {prestasiList.map((p, i) => (
+        <Card
+          key={i}
+          className="hover:shadow-lg transition cursor-pointer"
+          onClick={() => setSelectedImageIndex(karyaList.length + i)}
           >
-            <X className="w-6 h-6" />
-          </button>
           <img
-            src={selectedImage}
-            alt="Full Sertifikat"
-            className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-lg"
-          />
+            src={p.img}
+            alt={p.title}
+            className="w-full h-48 object-contain rounded-t-lg"
+            />
+          <CardContent className="p-4">
+            <p className="font-semibold text-gray-700">{p.title}</p>
+          </CardContent>
+        </Card>
+      ))}
         </div>
-      </div>
+      </section>
     )}
-  </>
-</AnimatePresence>
-        </motion.main>
-      </AnimatePresence>
+    </motion.main>
+    
+    <AnimatePresence>
+      {selectedImageIndex !== null && (
+      <motion.div
+        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setSelectedImageIndex(null)}
+        >
+        <motion.img
+          src={galleryImages[selectedImageIndex]}
+          alt="Preview"
+          className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
+          onClick={(e) => e.stopPropagation()}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          />
+        
+        <button onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute left-4 text-white hover:text-gray-300">
+          <ChevronLeft className="w-10 h-10" />
+        </button>
+        
+        <button onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute right-4 text-white hover:text-gray-300">
+          <ChevronRight className="w-10 h-10" />
+        </button>
+
+        <button onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }} className="absolute top-4 right-4 text-white hover:text-gray-300">
+          <X className="w-8 h-8" />
+        </button>
+      </motion.div>
+    )}
+    </AnimatePresence>
+  </AnimatePresence>
+          
+          </motion.main>
+        </AnimatePresence>
 
       <section className="py-16 text-center">
         <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
