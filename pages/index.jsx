@@ -105,9 +105,17 @@ export default function App() {
           ))}
         </nav>
       </header>
-
+      
+      
       <AnimatePresence mode="wait">
-        <motion.main key={page} variants={pageVariants} initial="initial" animate="animate" exit="exit" className="pt-28 p-8">
+        <motion.main
+          key={page}
+          variants={pageVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          className="p-8 pt-28"
+          >
           {page === 'home' && (
             <section className="text-center">
               <motion.img src="https://lh3.googleusercontent.com/d/14ZF3H8DsBOR-C_xlYD4GvGcL8D5qSrLa=s600" alt="Profil" className="w-40 h-40 rounded-full mx-auto border-4 border-blue-300 shadow-md" />
@@ -236,44 +244,34 @@ export default function App() {
             </section>
 
           )}
-
-          <AnimatePresence mode="wait">
-  <>
-    <motion.main
-      key={page}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="p-8 pt-28"
-    >
-      {page === 'prestasi' && (
-      <section className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {prestasiList.map((p, i) => (
-        <Card
-          key={i}
-          className="hover:shadow-lg transition cursor-pointer"
-          onClick={() => setSelectedImageIndex(karyaList.length + i)}
-          >
-          <img
-            src={p.img}
-            alt={p.title}
-            className="w-full h-48 object-contain rounded-t-lg"
-            />
-          <CardContent className="p-4">
-            <p className="font-semibold text-gray-700">{p.title}</p>
-          </CardContent>
-        </Card>
-      ))}
-        </div>
-      </section>
-    )}
-    </motion.main>
-    
-    <AnimatePresence>
-      {selectedImageIndex !== null && (
+          
+          {page === 'prestasi' && (
+            <section className="max-w-5xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-8 text-blue-700">Prestasi Lengkap</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {prestasiList.map((p, i) => (
+              <Card
+                key={i}
+                className="hover:shadow-lg transition cursor-pointer"
+                onClick={() => setSelectedImageIndex(karyaList.length + i)}
+                >
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="w-full h-48 object-contain rounded-t-lg"
+                  />
+                <CardContent className="p-4">
+                  <p className="font-semibold text-gray-700">{p.title}</p>
+                </CardContent>
+              </Card>
+            ))}
+              </div>
+            </section>
+          )}
+        </motion.main>
+        
+        <AnimatePresence>
+          {selectedImageIndex !== null && (
       <motion.div
         className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
         initial={{ opacity: 0 }}
@@ -291,21 +289,30 @@ export default function App() {
           exit={{ scale: 0.9, opacity: 0 }}
           />
         
-        <button onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute left-4 text-white hover:text-gray-300">
+        <button
+          onClick={(e) => { e.stopPropagation(); prevImage(); }}
+          className="absolute left-4 text-white hover:text-gray-300"
+          >
           <ChevronLeft className="w-10 h-10" />
         </button>
         
-        <button onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute right-4 text-white hover:text-gray-300">
+        <button
+          onClick={(e) => { e.stopPropagation(); nextImage(); }}
+          className="absolute right-4 text-white hover:text-gray-300"
+          >
           <ChevronRight className="w-10 h-10" />
         </button>
-
-        <button onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }} className="absolute top-4 right-4 text-white hover:text-gray-300">
+        
+        <button
+          onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }}
+          className="absolute top-4 right-4 text-white hover:text-gray-300"
+          >
           <X className="w-8 h-8" />
         </button>
       </motion.div>
     )}
-    </AnimatePresence>
-  </AnimatePresence>
+        </AnimatePresence>
+      </AnimatePresence>
           
           </motion.main>
         </AnimatePresence>
