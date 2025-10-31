@@ -7,6 +7,7 @@ import { Github, Linkedin, Mail, ChevronLeft, ChevronRight } from "lucide-react"
 export default function App() {
   const [page, setPage] = useState("home");
   const [transitioning, setTransitioning] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const gradients = {
