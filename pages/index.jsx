@@ -297,8 +297,7 @@ export default function App() {
     </a>
   </div>
 </motion.section>
-          <AnimatePresence mode="wait">
-    >
+         
       {page === 'prestasi' && (
         <section className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8 text-blue-700">
