@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function App() {
