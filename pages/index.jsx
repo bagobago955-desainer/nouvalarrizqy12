@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import Head from "next/head";
 
 export default function App() {
   const [page, setPage] = useState("home");
@@ -92,8 +93,6 @@ export default function App() {
     if (selectedImageIndex === null) return;
     setSelectedImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
-
-  import Head from "next/head";
 
   return (
     <>
