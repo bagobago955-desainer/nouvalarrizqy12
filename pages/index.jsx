@@ -11,9 +11,9 @@ export default function App() {
   const [bg, setBg] = useState("linear-gradient(to bottom right, #ebf8ff, #ffffff)");
 
   const karyaList = [
-    { title: "Desain Poster", desc: "Poster kegiatan sekolah", img: "https://via.placeholder.com/400x250" },
-    { title: "Logo Brand", desc: "Logo modern minimalis", img: "https://via.placeholder.com/400x250" },
-    { title: "Mockup Produk", desc: "Desain kemasan produk", img: "https://via.placeholder.com/400x250" },
+    { title: "Desain 3D Background Panggung Gembira 625", desc: "Desain Background 3D untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1Q0YWmEJMs2dAOf_QdwSY0vuqGfFxXzCj=s600" },
+    { title: "Logo dan Maskot Panggung Gembira 625", desc: "Logo dan maskot iconic untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1-IjJRj9S0A4LXrxBQv94ZHQ6X_duY8xX=s600" },
+    { title: "Desain Feed Instagram @dignifiedgeneration", desc: "Konsep konten visual untuk media sosial Instagram Dignified Generation.", img: "https://lh3.googleusercontent.com/d/1bD3pIjGgq_OGI1x31_BaRkSJp2cwg-MQ=s600" },
   ];
 
   const prestasiList = [
