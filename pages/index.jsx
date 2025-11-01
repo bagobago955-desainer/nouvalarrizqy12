@@ -361,13 +361,10 @@ export default function App() {
         className="absolute right-4 text-white hover:text-gray-300"
       >
         <ChevronRight className="w-10 h-10" />
-      </button>
-    </motion.div>
-  )}
-      </a>
-      </div>
-    </section>
+        </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
-    <>
   );
-
+}
