@@ -324,32 +324,33 @@ export default function App() {
         </section>
       )}
     </motion.main>
-         {selectedImage && (
-      <div
-        className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
-        onClick={() => setSelectedImage(null)}
-      >
-        <div className="relative max-w-4xl w-full p-4">
-          <button
-            className="absolute top-4 right-4 text-white"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedImage(null);
-            }}
-          >
-            <X className="w-6 h-6" />
-          </button>
-          <img
-            src={selectedImage}
-            alt="Full Sertifikat"
-            className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-lg"
-          />
-        </div>
-      </div>
-    )}
-  </motion.main>
-</AnimatePresence>
 
+        {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl w-full p-4">
+            <button
+              className="absolute top-4 right-4 text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Full Sertifikat"
+              className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      )}
+    </motion.main>
+  </AnimatePresence>
+);
       <section className="py-16 text-center">
         <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
         <p className="text-gray-600 mb-6">Tertarik bekerja sama atau ingin berdiskusi?</p>
