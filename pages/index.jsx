@@ -297,17 +297,7 @@ export default function App() {
     </a>
   </div>
 </motion.section>
-
-
           <AnimatePresence mode="wait">
-  <>
-    <motion.main
-      key={page}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="p-8 pt-28"
     >
       {page === 'prestasi' && (
         <section className="max-w-5xl mx-auto text-center">
