@@ -316,6 +316,7 @@ export default function App() {
   </>
 </AnimatePresence>
         </motion.main>
+      
       </AnimatePresence>
 
       <section className="py-16 text-center">
@@ -329,42 +330,43 @@ export default function App() {
       </section>
 
       <AnimatePresence>
-  {selectedImageIndex !== null && (
-    <motion.div
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 cursor-zoom-out"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={() => setSelectedImageIndex(null)}
-    >
-      <motion.img
-        src={galleryImages[selectedImageIndex]}
-        alt="Preview"
-        className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg cursor-zoom-in"
-        onClick={(e) => e.stopPropagation()}
-        whileTap={{ scale: 1.15 }}
-        transition={{ type: "spring", stiffness: 200, damping: 15 }}
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-      />
+        {selectedImageIndex !== null && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 cursor-zoom-out"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImageIndex(null)}
+          >
+            <motion.img
+              src={galleryImages[selectedImageIndex]}
+              alt="Preview"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg cursor-zoom-in"
+              onClick={(e) => e.stopPropagation()}
+              whileTap={{ scale: 1.15 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+            />
 
-      <button
-        onClick={(e) => { e.stopPropagation(); prevImage(); }}
-        className="absolute left-4 text-white hover:text-gray-300"
-      >
-        <ChevronLeft className="w-10 h-10" />
-      </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
+              className="absolute left-4 text-white hover:text-gray-300"
+            >
+              <ChevronLeft className="w-10 h-10" />
+            </button>
 
-      <button
-        onClick={(e) => { e.stopPropagation(); nextImage(); }}
-        className="absolute right-4 text-white hover:text-gray-300"
-      >
-        <ChevronRight className="w-10 h-10" />
-        </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
+              className="absolute right-4 text-white hover:text-gray-300"
+            >
+              <ChevronRight className="w-10 h-10" />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
+  </>
   );
 }
