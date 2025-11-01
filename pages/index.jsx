@@ -17,9 +17,16 @@ export default function App() {
   ];
 
   const prestasiList = [
-    { title: "Juara 1 Lomba Desain Poster", img: "https://via.placeholder.com/400x250" },
-    { title: "Juara 2 Lomba Logo Kreatif", img: "https://via.placeholder.com/400x250" },
-    { title: "Finalis Kompetisi Desain Nasional", img: "https://via.placeholder.com/400x250" },
+    { title: "Peraih medali perak National Olympiad of Academic (NOA) 2024 bidang Biologi", img: "https://lh3.googleusercontent.com/d/1gUWVC-yJPlH3TkSWRI8dGINUoPDmF9s8=s600" },
+    { title: "Peraih medali perunggu Pekan Kompetisi Akademik Nasional (PKAN) 2024 bidang Informatika", img: "https://lh3.googleusercontent.com/d/1tSMsajVxkGjsCCs0Nv8_LBGqre5CDXzF=s600" },
+    { title: "Peraih medali emas Olimpiade Siswa Tingkat Nasional (OSTN) 2024 bidang Kimia", img: "https://lh3.googleusercontent.com/d/1Nc_uc_jGXn7tWOMRwavzqz8vnsCb6Dgo=s600" },
+    { title: "Peraih medali perak Olimpiade Siswa Tingkat Nasional (OSTN) 2024 bidang Fisika", img: "https://lh3.googleusercontent.com/d/1QZzmJ4ZOWZ62mn9hsFv0Rkm3gj_7pMi1=s600" },
+    { title: "Peraih medali perak Olimpiade Nasional Sains dan Bahasa (ONSB) 2025 bidang Matematika", img: "https://lh3.googleusercontent.com/d/15VK-kYNfmHvPamg57dKAxqRYXcKlcjWo=s600" },
+    { title: "Peraih medali Emas Pekan Olimpiade Sains, Bahasa dan Agama Nasional (POSBASNAS) 2025 bidang Fisika", img: "https://lh3.googleusercontent.com/d/1xypJOs0N2_4P3Gm5herpW5PjI73H0FYh=s600" },
+    { title: "Peraih medali Perunggu Pekan Olimpiade Sains, Bahasa dan Agama Nasional (POSBASNAS) 2025 bidang Matematika", img: "https://lh3.googleusercontent.com/d/1WSMzp26r0CoExmftsPv5aLCw9QmiDRNI=s600" },
+    { title: "Peraih medali emas Indonesian Science Academic Competition (ISAC) 2025 bidang Biologi", img: "https://lh3.googleusercontent.com/d/1vbuuVCYXttExdauAqzrJHaV0-x508fu8=s600" },
+    { title: "Peraih medali emas Olimpiade Pelajar (OPN) 2025 bidang Kimia", img: "https://lh3.googleusercontent.com/d/1jcUo6IfuWe649ZoCj59wvspdCvideNcw=s600" },
+    { title: "Peraih medali emas Olimpiade Pelajar (OPN) 2025 bidang Bahasa Inggris", img: "https://lh3.googleusercontent.com/d/1F0IVt2FB7jjqnFkXiaZ-pq115PXbITf_=s600" },
   ];
 
   const skills = [
