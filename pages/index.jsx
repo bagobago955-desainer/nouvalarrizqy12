@@ -93,8 +93,25 @@ export default function App() {
     setSelectedImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
+  import Head from "next/head";
+
   return (
-    <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
+    <>
+      <Head>
+        <title>Muhammad Nouval Ar-Rizqy | Portofolio</title>
+        <meta name="description" content="Portofolio resmi Muhammad Nouval Ar-Rizqy — menampilkan karya desain grafis, prestasi, dan proyek kreatif dengan tampilan modern." />
+        <meta name="keywords" content="Muhammad Nouval Ar-Rizqy, portofolio, desainer grafis, karya, project, prestasi, Al Ishlah, Indramayu" />
+        <meta name="author" content="Muhammad Nouval Ar-Rizqy" />
+        <meta property="og:title" content="Portofolio Muhammad Nouval Ar-Rizqy" />
+        <meta property="og:description" content="Lihat karya dan proyek desain grafis saya — identitas visual dan karya berkarakter." />
+        <meta property="og:image" content="https://lh3.googleusercontent.com/d/14ZF3H8DsBOR-C_xlYD4GvGcL8D5qSrLa=s600" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nouvalarrizqy12-hg3u.vercel.app/" />
+        <link rel="icon" href="/favicon.ico" />
+        <html lang="id" />
+      </Head>
+      
+      <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
       <header className="flex justify-between items-center p-6 fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md shadow z-50">
         <h1 className="text-2xl font-bold text-blue-700">MUHAMMAD NOUVAL AR-RIZQY</h1>
         <nav className="space-x-4">
