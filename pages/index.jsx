@@ -4,85 +4,61 @@ import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  in: {
-    opacity: 1,
-    y: 0,
-  },
-  out: {
-    opacity: 0,
-    y: -20,
-  },
-};
-
-
 export default function App() {
   const [page, setPage] = useState("home");
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [bg, setBg] = useState("linear-gradient(to bottom right, #ebf8ff, #ffffff)");
-  
-  const karyaList = [
-    { title: "Desain 3D Background Panggung Gembira 625", desc: "Desain Background 3D untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1Q0YWmEJMs2dAOf_QdwSY0vuqGfFxXzCj=s600" },
-    { title: "Logo dan Maskot Panggung Gembira 625", desc: "Logo dan maskot iconic untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1-IjJRj9S0A4LXrxBQv94ZHQ6X_duY8xX=s600" },
-    { title: "Desain Feed Instagram @dignifiedgeneration", desc: "Konsep konten visual untuk media sosial Instagram Dignified Generation.", img: "https://lh3.googleusercontent.com/d/1bD3pIjGgq_OGI1x31_BaRkSJp2cwg-MQ=s600" },
-  ];
 
-  const projectList = [
-    { title: "Website Portfolio", desc: "Situs pribadi untuk menampilkan karya.", img: "https://lh3.googleusercontent.com/d/1XPnjlzl-7YXCH0vTLN35hJ2JjPqsr1gZ=s600" },
-    { title: "Dashboard Analitik", desc: "UI dashboard berbasis data visual.", img: "https://via.placeholder.com/400x250?text=Project+2" },
-    { title: "Aplikasi Galeri Desain", desc: "Beberapa proyek kreatif yang telah saya kerjakan.", img: "https://via.placeholder.com/400x250?text=Project+3" },
+  const karyaList = [
+    { title: "Desain Poster", desc: "Poster kegiatan sekolah", img: "https://via.placeholder.com/400x250" },
+    { title: "Logo Brand", desc: "Logo modern minimalis", img: "https://via.placeholder.com/400x250" },
+    { title: "Mockup Produk", desc: "Desain kemasan produk", img: "https://via.placeholder.com/400x250" },
   ];
 
   const prestasiList = [
-    { title: "Peraih medali perak National Olympiad of Academic (NOA) 2024 bidang Biologi", img: "https://lh3.googleusercontent.com/d/1gUWVC-yJPlH3TkSWRI8dGINUoPDmF9s8=s600" },
-    { title: "Peraih medali perunggu Pekan Kompetisi Akademik Nasional (PKAN) 2024 bidang Informatika", img: "https://lh3.googleusercontent.com/d/1tSMsajVxkGjsCCs0Nv8_LBGqre5CDXzF=s600" },
-    { title: "Peraih medali emas Olimpiade Siswa Tingkat Nasional (OSTN) 2024 bidang Kimia", img: "https://lh3.googleusercontent.com/d/1Nc_uc_jGXn7tWOMRwavzqz8vnsCb6Dgo=s600" },
-    { title: "Peraih medali perak Olimpiade Siswa Tingkat Nasional (OSTN) 2024 bidang Fisika", img: "https://lh3.googleusercontent.com/d/1QZzmJ4ZOWZ62mn9hsFv0Rkm3gj_7pMi1=s600" },
-    { title: "Peraih medali perak Olimpiade Nasional Sains dan Bahasa (ONSB) 2025 bidang Matematika", img: "https://lh3.googleusercontent.com/d/15VK-kYNfmHvPamg57dKAxqRYXcKlcjWo=s600" },
-    { title: "Peraih medali Emas Pekan Olimpiade Sains, Bahasa dan Agama Nasional (POSBASNAS) 2025 bidang Fisika", img: "https://lh3.googleusercontent.com/d/1xypJOs0N2_4P3Gm5herpW5PjI73H0FYh=s600" },
-    { title: "Peraih medali Perunggu Pekan Olimpiade Sains, Bahasa dan Agama Nasional (POSBASNAS) 2025 bidang Matematika", img: "https://lh3.googleusercontent.com/d/1WSMzp26r0CoExmftsPv5aLCw9QmiDRNI=s600" },
-    { title: "Peraih medali emas Indonesian Science Academic Competition (ISAC) 2025 bidang Biologi", img: "https://lh3.googleusercontent.com/d/1vbuuVCYXttExdauAqzrJHaV0-x508fu8=s600" },
-    { title: "Peraih medali emas Olimpiade Pelajar (OPN) 2025 bidang Kimia", img: "https://lh3.googleusercontent.com/d/1jcUo6IfuWe649ZoCj59wvspdCvideNcw=s600" },
-    { title: "Peraih medali emas Olimpiade Pelajar (OPN) 2025 bidang Bahasa Inggris", img: "https://lh3.googleusercontent.com/d/1F0IVt2FB7jjqnFkXiaZ-pq115PXbITf_=s600" },
+    { title: "Juara 1 Lomba Desain Poster", img: "https://via.placeholder.com/400x250" },
+    { title: "Juara 2 Lomba Logo Kreatif", img: "https://via.placeholder.com/400x250" },
+    { title: "Finalis Kompetisi Desain Nasional", img: "https://via.placeholder.com/400x250" },
   ];
 
   const skills = [
-    { name: "Adobe Photoshop", level: 78 },
-    { name: "Adobe After Effects", level: 85 },
-    { name: "Capcut", level: 90 },
-    { name: "CorelDraw", level: 95 },
-    { name: "Figma", level: 70 },
+    { name: "Adobe Photoshop", level: 90 },
+    { name: "Adobe Illustrator", level: 85 },
     { name: "Canva", level: 95 },
-    { name: "C++", level: 70 },
+    { name: "UI/UX Design", level: 80 },
   ];
 
   const galleryImages = [...karyaList.map(k => k.img), ...prestasiList.map(p => p.img)];
 
-  useEffect(() => {
-    function handleKey(e) {
-      if (e.key === "Escape") setSelectedImageIndex(null);
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
-    }
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedImageIndex]);
+  const pageVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
+  const navigate = (p) => {
+    setPage(p);
+    const bgMap = {
+      home: "linear-gradient(to bottom right, #ebf8ff, #ffffff)",
+      tentang: "linear-gradient(to bottom right, #f0f4ff, #ffffff)",
+      karya: "linear-gradient(to bottom right, #fff8f0, #ffffff)",
+      project: "linear-gradient(to bottom right, #f0fff4, #ffffff)",
+      prestasi: "linear-gradient(to bottom right, #fff0f8, #ffffff)",
+    };
+    setBg(bgMap[p] || "#fff");
+  };
 
   const nextImage = () => {
-    if (selectedImageIndex === null) return;
-    setSelectedImageIndex((prev) => (prev + 1) % galleryImages.length);
+    if (selectedImageIndex !== null)
+      setSelectedImageIndex((selectedImageIndex + 1) % galleryImages.length);
   };
 
   const prevImage = () => {
-    if (selectedImageIndex === null) return;
-    setSelectedImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    if (selectedImageIndex !== null)
+      setSelectedImageIndex((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length);
   };
-  
+
   return (
     <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
       {/* HEADER */}
