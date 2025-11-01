@@ -324,8 +324,7 @@ export default function App() {
         </section>
       )}
     </motion.main>
-
-    {selectedImage && (
+         {selectedImage && (
       <div
         className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
         onClick={() => setSelectedImage(null)}
@@ -348,10 +347,8 @@ export default function App() {
         </div>
       </div>
     )}
-  </>
+  </motion.main>
 </AnimatePresence>
-        </motion.main>
-      </AnimatePresence>
 
       <section className="py-16 text-center">
         <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
