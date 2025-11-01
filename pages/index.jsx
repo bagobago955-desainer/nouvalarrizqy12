@@ -9,26 +9,7 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [bg, setBg] = useState("linear-gradient(to bottom right, #ebf8ff, #ffffff)");
-
   
-  const [bg, setBg] = useState(gradients.home);
-  useEffect(() => setBg(gradients[page] || gradients.home), [page]);
-
-  const navigate = (to) => {
-    if (to === page || transitioning) return;
-    setTransitioning(true);
-    setTimeout(() => {
-      setPage(to);
-      setTimeout(() => setTransitioning(false), 600);
-    }, 400);
-  };
-
-  const pageVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-  };
-
   const karyaList = [
     { title: "Desain 3D Background Panggung Gembira 625", desc: "Desain Background 3D untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1Q0YWmEJMs2dAOf_QdwSY0vuqGfFxXzCj=s600" },
     { title: "Logo dan Maskot Panggung Gembira 625", desc: "Logo dan maskot iconic untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1-IjJRj9S0A4LXrxBQv94ZHQ6X_duY8xX=s600" },
